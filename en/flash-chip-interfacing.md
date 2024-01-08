@@ -105,7 +105,11 @@ In this example, the programmer is connected to COM23, and the baud rate is 2000
 ./flashrom.exe -p serprog:dev=COM23:2000000 -V
 ```
 
-Here is an example of reading a flash chip.   In this example, flashrom had told us we had to pick between three different chips, and we picked the "GD25B128B/GD25Q128B".
+Here is an example of reading a flash chip.   In this example, `flashrom` had told us we had to pick between three different chips, and we picked the "GD25B128B/GD25Q128B".
+
+**Note:** If you don't see the output `serprog: Programmer name is "pico-serprog"` then you probably have a problem with your connection to your pico.   
+The serial interface should identify the pico-serprog firmware without even any chip connected to it.  If it doesn't, you need to debug that first.
+
 ```bash
 # ./flashrom.exe -p serprog:dev=COM23:2000000 -c "GD25B128B/GD25Q128B" -r gokev300-camera-12242023.bin -VV --force
 flashrom 1.4.0-devel (git:v1.2-1386-g5106287e) on Windows 10.0 (x86_64)
